@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manas College Pithoragarh | Smart Library</title>
+<style>
+:root{--navy:#20251f;--blue:#39735b;--soft:#edf5ef;--bg:#f6f5f0;--text:#252a25;--muted:#74796f;--line:#e5e5dc;--white:#fff;--red:#b94a48;--green:#39735b;--amber:#a96800}
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:9px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:650}button.secondary{background:#edf5ef;color:var(--navy)}button.danger{background:#fff0f0;color:#b42332;border:1px solid #ffd5d8}button.small{padding:6px 9px;font-size:12px}.app{display:flex;min-height:100vh}.sidebar{width:245px;background:var(--navy);color:#dbe7ff;padding:22px 14px;flex-shrink:0}.brand{display:flex;gap:10px;align-items:center;padding:0 8px 24px}.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#b9d7c1,#edf5ef);color:#20251f;display:grid;place-items:center;font-weight:900;font-size:18px}.brand strong{display:block;color:white;font-size:14px}.brand span{font-size:11px;color:#b4c5b7}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#9aab9d;padding:13px 10px 6px}.nav button{width:100%;text-align:left;background:transparent;color:#d4e1d5;padding:10px;border-radius:8px;font-weight:500;margin:2px 0}.nav button.active,.nav button:hover{background:#354b3c;color:white}.nav button .ico{display:inline-block;width:24px}.sidebar-foot{font-size:11px;color:#8299bd;padding:24px 10px}.main{flex:1;min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:12px}.topbar h1{font-size:18px;margin:0}.topright{display:flex;align-items:center;gap:12px;color:var(--muted)}.role-pill{background:var(--soft);color:var(--blue);padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700}.content{padding:26px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.page-head h2{font-size:23px;margin:0}.page-head p{color:var(--muted);margin:5px 0 0}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-bottom:20px}.metric,.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 12px #142b4d06}.metric .label{font-size:12px;color:var(--muted)}.metric .num{font-size:28px;font-weight:800;margin:8px 0 2px;color:var(--navy)}.metric .hint{font-size:11px;color:#7c8ba3}.metric .mark{float:right;background:var(--soft);color:var(--blue);width:32px;height:32px;display:grid;place-items:center;border-radius:10px;font-weight:800}.two-col{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:16px}.panel h3{margin:0 0 15px;font-size:15px}.muted{color:var(--muted)}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:11px 10px;border-bottom:1px solid #eceee7;font-size:12px;vertical-align:middle}th{font-size:11px;color:#687890;text-transform:uppercase;letter-spacing:.4px;background:#fbfbf7}tr:last-child td{border-bottom:0}.badge{display:inline-block;border-radius:20px;padding:4px 8px;font-size:11px;font-weight:700;background:#eaf8f1;color:#18744f}.badge.red{background:#fff0f0;color:#b42332}.badge.amber{background:#fff6e5;color:#996000}.badge.blue{background:#edf5ef;color:#39735b}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:15px}.toolbar input,.toolbar select{max-width:250px}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:700;color:#52617a}input,select,textarea{width:100%;padding:10px 11px;border:1px solid #d9e1ee;border-radius:8px;background:#fff;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:#76a789;box-shadow:0 0 0 3px #39735b12}.form-actions{display:flex;gap:8px;margin-top:18px}.empty{padding:30px;text-align:center;color:var(--muted)}.notice{padding:12px 14px;background:#fff7e7;color:#815300;border:1px solid #f6dfab;border-radius:10px;margin-bottom:16px;font-size:12px}.success{padding:11px 13px;background:#eaf8f1;color:#18744f;border-radius:8px;margin-bottom:14px}.error{padding:11px 13px;background:#fff0f0;color:#b42332;border-radius:8px;margin-bottom:14px}.hidden{display:none!important}
+.login-screen{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 12% 10%,#e6efff 0,transparent 34%),radial-gradient(circle at 90% 90%,#e0eadf 0,transparent 38%),var(--bg)}
+.login-card{width:min(430px,100%);background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 32px;box-shadow:0 18px 60px #142b4d12;text-align:center}
+.college-logo{display:block;width:112px;height:112px;object-fit:contain;margin:0 auto 12px;background:#fff}
+.brand .college-logo{width:48px;height:48px;margin:0;flex:0 0 48px;border-radius:8px;object-fit:contain;background:#fff}
+.login-card h1{font-size:23px;margin:8px 0 4px;color:var(--navy)}
+.login-card p{color:var(--muted);margin:0 0 22px}
+.login-card .field{margin-bottom:14px;text-align:left}
+.login-card .field label{font-size:12px;font-weight:700;color:#52617a}
+.login-card input{height:46px;border-radius:10px;padding:11px 13px}
+.password-wrap{position:relative}
+.password-wrap input{padding-right:76px}
+.password-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:36px!important;height:36px!important;display:grid;place-items:center;margin:0!important;padding:6px!important;border-radius:8px!important;background:transparent!important;color:var(--blue)!important}.password-toggle:hover{background:#edf5ef!important}.password-toggle svg{display:block}
+.login-card button[type=submit]{width:100%;height:46px;margin-top:8px;border-radius:10px;font-size:14px}
+.login-card button[type=submit]:hover{filter:brightness(.94)}
+.footer{text-align:center;color:#8995a8;font-size:11px;padding:22px}.action-row{display:flex;gap:6px;flex-wrap:wrap}.section-note{font-size:12px;color:var(--muted);margin-top:6px}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.person-preview{padding:12px;border:1px dashed #d4ddd2;background:#f8faff;border-radius:9px;margin-top:12px;font-size:12px}.login-card .error{margin-top:10px;text-align:left}
+
+@media(max-width:1100px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.sidebar{width:215px}.two-col{grid-template-columns:1fr}}
+@media(max-width:720px){.app{display:block}.sidebar{width:100%;padding:12px}.brand{padding-bottom:10px}.nav{display:flex;overflow:auto;gap:4px}.nav-label,.sidebar-foot{display:none}.nav button{white-space:nowrap;width:auto;flex-shrink:0;padding:8px 10px}.topbar{height:auto;padding:14px 16px}.content{padding:16px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{padding:13px}.metric .num{font-size:23px}.field-grid,.split{grid-template-columns:1fr}.page-head{align-items:flex-start;flex-direction:column}.topright{font-size:12px}}
+@media print{.sidebar,.topbar,.toolbar,.page-head button,.action-row,.footer,.no-print{display:none!important}.main,.content{padding:0;margin:0}.panel,.metric{box-shadow:none;break-inside:avoid}body{background:white}.cards{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <img class="college-logo" src="mcstm-logo.png" alt="Manas College of Science Technology & Management logo">
+    <h1>Smart Library Management</h1>
+    <p>Manas College Pithoragarh · Powered by Manshi Joshi</p>
+    <form id="loginForm" autocomplete="off">
+      <div class="field"><label for="username">Username</label><input id="username" name="library-user" required autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Enter username"></div>
+      <div class="field"><label for="password">Password</label><div class="password-wrap"><input id="password" name="library-passcode" type="password" required autocomplete="new-password" autocapitalize="none" spellcheck="false" readonly placeholder="Enter password"><button class="password-toggle" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false" title="Show password"><svg id="passwordEyeIcon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button></div></div>
+      <div id="loginError" class="error hidden" role="alert"></div>
+      <button type="submit">Login to Library</button>
+    </form>
+  </div>
+</div>
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand"><img class="college-logo" src="mcstm-logo.png" alt="MCSTM college logo"><div><strong>MANAS COLLEGE</strong><span>Smart Library System</span></div></div>
+    <div class="nav-label">Workspace</div>
+    <nav class="nav" id="nav">
+      <button data-page="dashboard" class="active"><span class="ico">▦</span>Dashboard</button>
+      <button data-page="books"><span class="ico">▤</span>Book Management</button>
+      <button data-page="search"><span class="ico">⌕</span>Book Search</button>
+      <button data-page="students"><span class="ico">♙</span>Student Management</button>
+      <button data-page="faculty"><span class="ico">♧</span>Faculty Management</button>
+      <button data-page="departments"><span class="ico">▥</span>Departments</button>
+      <button data-page="issue"><span class="ico">↗</span>Issue Book</button>
+      <button data-page="return"><span class="ico">↙</span>Return Book</button>
+      <button data-page="history"><span class="ico">◷</span>Issue History</button>
+      <button data-page="reissue"><span class="ico">⟳</span>Reissue Book</button>
+      <button data-page="fines"><span class="ico">₹</span>Fine Management</button>
+      <button data-page="reports"><span class="ico">▥</span>Reports</button>
+      <button data-page="settings"><span class="ico">⚙</span>Settings & Data</button>
+      <button id="logoutBtn"><span class="ico">⇥</span>Logout</button>
+    </nav>
+    <div class="sidebar-foot">GitHub Pages demo · Browser storage</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><h1 id="topTitle">Dashboard</h1><div class="topright"><span id="today"></span><span class="role-pill" id="roleBadge">ADMIN</span></div></header>
+    <div class="content" id="view"></div>
+    <div class="footer">Manas College Pithoragarh · Powered by Manshi Joshi</div>
+  </main>
+</div>
+<script>
+(() => {
+const KEY='manasSmartLibraryDemo_v1';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const today=()=>new Date().toISOString().slice(0,10);
+const plusDays=(d,n)=>{let x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return x.toISOString().slice(0,10)};
+let currentUser=null,page='dashboard',notice='';
+function seed(){
+ const departments=[
+ {id:'D001',name:'Computer Science',code:'CS'},{id:'D002',name:'Information Technology',code:'IT'},
+ {id:'D003',name:'Management',code:'MGT'},{id:'D004',name:'Commerce',code:'COM'},{id:'D005',name:'Science',code:'SCI'}];
+ const books=[
+ ['B001','Introduction to Algorithms','Thomas H. Cormen','MIT Press','9780262046305','Computer Science','4',12,12,'CS-A1','Algorithms and problem solving'],
+ ['B002','Clean Code','Robert C. Martin','Prentice Hall','9780132350884','Computer Science','5',8,8,'CS-A2','Readable and maintainable code'],
+ ['B003','Database System Concepts','Abraham Silberschatz','McGraw Hill','9780078022159','Information Technology','3',10,10,'IT-B1','Database fundamentals'],
+ ['B004','Computer Networks','Andrew S. Tanenbaum','Pearson','9780132126953','Information Technology','4',7,7,'IT-B2','Networking concepts'],
+ ['B005','Principles of Management','Harold Koontz','McGraw Hill','9780070421831','Management','2',9,9,'MG-C1','Management foundations'],
+ ['B006','Marketing Management','Philip Kotler','Pearson','9780133856460','Management','4',6,6,'MG-C2','Marketing strategy'],
+ ['B007','Financial Accounting','S. N. Maheshwari','Vikas','9789325960553','Commerce','1',11,11,'CO-D1','Accounting principles'],
+ ['B008','Business Law','P. C. Tulsian','McGraw Hill','9789353168104','Commerce','3',5,5,'CO-D2','Business legal framework'],
+ ['B009','Fundamentals of Physics','Halliday, Resnick','Wiley','9781119773518','Science','2',8,8,'SC-E1','Introductory physics'],
+ ['B010','Organic Chemistry','Morrison and Boyd','Pearson','9780136436690','Science','4',6,6,'SC-E2','Organic chemistry reference']];
+ const students=[
+ {id:'STU1001',name:'Aarav Joshi',department:'Computer Science',semester:'3',mobile:'9876501001',email:'aarav@example.com',address:'Pithoragarh',verified:true},
+ {id:'STU1002',name:'Ananya Rawat',department:'Information Technology',semester:'5',mobile:'9876501002',email:'ananya@example.com',address:'Pithoragarh',verified:true},
+ {id:'STU1003',name:'Vivaan Bora',department:'Management',semester:'2',mobile:'9876501003',email:'vivaan@example.com',address:'Didihat',verified:false},
+ {id:'STU1004',name:'Diya Mehta',department:'Commerce',semester:'1',mobile:'9876501004',email:'diya@example.com',address:'Pithoragarh',verified:true},
+ {id:'STU1005',name:'Ishaan Bisht',department:'Science',semester:'4',mobile:'9876501005',email:'ishaan@example.com',address:'Berinag',verified:true}];
+ const faculty=[
+ {id:'FAC001',name:'Dr. Neha Joshi',department:'Computer Science',mobile:'9876510001',email:'neha.joshi@example.com'},
+ {id:'FAC002',name:'Prof. R. P. Singh',department:'Commerce',mobile:'9876510002',email:'rpsingh@example.com'}];
+ const issues=[
+ {id:'TXN1001',personType:'Student',personId:'STU1001',personName:'Aarav Joshi',department:'Computer Science',bookId:'B001',bookName:'Introduction to Algorithms',author:'Thomas H. Cormen',issueDate:plusDays(today(),-12),dueDate:plusDays(today(),-2),returnDate:'',issuedBy:'Demo Librarian',status:'Overdue',fine:0,reissues:[]},
+ {id:'TXN1002',personType:'Student',personId:'STU1002',personName:'Ananya Rawat',department:'Information Technology',bookId:'B003',bookName:'Database System Concepts',author:'Abraham Silberschatz',issueDate:plusDays(today(),-4),dueDate:plusDays(today(),10),returnDate:'',issuedBy:'Demo Librarian',status:'Issued',fine:0,reissues:[]},
+ {id:'TXN1003',personType:'Faculty',personId:'FAC001',personName:'Dr. Neha Joshi',department:'Computer Science',bookId:'B002',bookName:'Clean Code',author:'Robert C. Martin',issueDate:plusDays(today(),-30),dueDate:plusDays(today(),-20),returnDate:plusDays(today(),-18),issuedBy:'Demo Librarian',status:'Returned',fine:200,reissues:[]}];
+ const adjusted=books.map((b,i)=>({...{id:b[0],accNo:'ACC-'+b[0],name:b[1],author:b[2],publisher:b[3],isbn:b[4],department:b[5],semester:b[6],total:+b[7],available:+b[8],shelf:b[9],description:b[10]},available:b[8]-(i===0||i===2||i===1?1:0)}));
+ return {departments,books:adjusted,students,faculty,issues,fines:[{id:'FIN1001',transactionId:'TXN1003',personType:'Faculty',personId:'FAC001',personName:'Dr. Neha Joshi',amount:200,paid:200,status:'Paid',paymentDate:plusDays(today(),-18)}],finePerDay:20,users:[{username:'admin',password:'admin123',role:'Admin'},{username:'librarian',password:'lib123',role:'Librarian'}]};
+}
+function load(){try{let d=JSON.parse(localStorage.getItem(KEY));if(d&&d.books&&d.issues)return d}catch(e){}let d=seed();save(d);return d}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+let db=load();
+function id(prefix,arr){let n=1;while(arr.some(x=>x.id===prefix+String(n).padStart(4,'0')))n++;return prefix+String(n).padStart(4,'0')}
+function msg(text,type='success'){notice={text,type};render()}
+function isAdmin(){return currentUser?.role==='Admin'}
+function isOverdue(x){return x.status!=='Returned'&&x.dueDate<today()}
+function syncStatuses(){db.issues.forEach(x=>{if(x.status!=='Returned')x.status=isOverdue(x)?'Overdue':'Issued'});save(db)}
+function opts(items,selected='',labelFn=x=>x.name,valueFn=x=>x.name,placeholder='Select...'){return `<option value="">${esc(placeholder)}</option>`+items.map(x=>`<option value="${esc(valueFn(x))}" ${String(valueFn(x))===String(selected)?'selected':''}>${esc(labelFn(x))}</option>`).join('')}
+function deptOpts(selected=''){return opts(db.departments,selected,x=>x.name,x=>x.name,'All departments')}
+function bookOpts(selected=''){return opts(db.books,selected,x=>`${x.id} · ${x.name} (${x.available} available)`,x=>x.id,'Select book')}
+function personOpts(type){let arr=type==='Student'?db.students:db.faculty;return opts(arr,'',x=>`${x.id} · ${x.name}`,x=>x.id,'Select person')}
+function table(headers,rows,empty='No records found.'){return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.join(''):`<tr><td colspan="${headers.length}" class="empty">${empty}</td></tr>`}</tbody></table></div>`}
+function badge(status){let c=status==='Overdue'||status==='Pending'?'red':status==='Returned'||status==='Paid'||status==='Verified'?'':'blue';return `<span class="badge ${c}">${esc(status)}</span>`}
+function header(title,sub,button=''){return `<div class="page-head"><div><h2>${title}</h2><p>${sub||''}</p></div>${button}</div>`}
+function metric(label,value,hint,icon){return `<div class="metric"><span class="mark">${icon}</span><div class="label">${label}</div><div class="num">${value}</div><div class="hint">${hint||''}</div></div>`}
+function dashboard(){
+ syncStatuses();let active=db.issues.filter(x=>x.status!=='Returned'),overdue=active.filter(isOverdue),available=db.books.reduce((a,b)=>a+b.available,0),total=db.books.reduce((a,b)=>a+b.total,0);
+ let deptRows=db.departments.map(d=>{let books=db.books.filter(b=>b.department===d.name),issued=books.reduce((a,b)=>a+b.total-b.available,0);return `<tr><td><b>${esc(d.name)}</b></td><td>${books.reduce((a,b)=>a+b.total,0)}</td><td>${books.reduce((a,b)=>a+b.available,0)}</td><td>${issued}</td></tr>`});
+ let recent=db.issues.slice().sort((a,b)=>b.issueDate.localeCompare(a.issueDate)).slice(0,5).map(x=>`<tr><td><b>${esc(x.bookName)}</b><div class="muted">${esc(x.bookId)}</div></td><td>${esc(x.personName)}<div class="muted">${esc(x.personType)} · ${esc(x.personId)}</div></td><td>${esc(x.issueDate)}</td><td>${badge(x.status)}</td></tr>`);
+ let returns=db.issues.filter(x=>x.returnDate).sort((a,b)=>b.returnDate.localeCompare(a.returnDate)).slice(0,4).map(x=>`<tr><td>${esc(x.bookName)}</td><td>${esc(x.personName)}</td><td>${esc(x.returnDate)}</td><td>${x.fine?'₹'+x.fine:'—'}</td></tr>`);
+ return `${header('Library Dashboard','Live overview of Manas College library inventory and circulation.')}
+ ${notice?`<div class="${notice.type==='error'?'error':'success'}">${esc(notice.text)}</div>`:''}
+ <div class="notice">Records are stored in this browser. Export a JSON backup regularly. This demo login is not a secure production authentication system or a shared database.</div>
+ <div class="cards">${metric('Total Books',total,'Total physical copies','▤')}${metric('Available Books',available,'Copies ready to issue','✓')}${metric('Active Issued Books',active.length,'Currently checked out','↗')}${metric('Overdue Books',overdue.length,'Need return follow-up','!')}${metric('Total Departments',db.departments.length,'Departments in catalogue','▥')}</div>
+ <div class="two-col"><section class="panel"><h3>Department-wise book stock</h3>${table(['Department','Total Books','Available','Issued'],deptRows)}</section><section class="panel"><h3>Overdue notifications</h3>${table(['Book / Person','Due date','Days late'],overdue.map(x=>`<tr><td><b>${esc(x.bookName)}</b><div class="muted">${esc(x.personName)} · ${esc(x.personId)}</div></td><td>${esc(x.dueDate)}</td><td><span class="badge red">${Math.max(0,Math.floor((new Date(today())-new Date(x.dueDate))/86400000))} days</span></td></tr>`),'No overdue books. Great!')}</section></div>
+ <div class="two-col"><section class="panel"><h3>Recent book issue records</h3>${table(['Book','Borrower','Issue date','Status'],recent)}</section><section class="panel"><h3>Recent book return records</h3>${table(['Book','Borrower','Return date','Fine'],returns)}</section></div>`;
+}
+function bookRows(list){return list.map(b=>`<tr><td><b>${esc(b.id)}</b></td><td>${esc(b.accNo||'—')}</td><td><b>${esc(b.name)}</b><div class="muted">${esc(b.isbn||'No ISBN')}</div></td><td>${esc(b.author)}</td><td>${esc(b.department)}</td><td>${esc(b.semester)}</td><td>${b.total}</td><td>${b.available===0?badge('Out of stock'):`<span class="badge">${b.available}</span>`}</td><td>${esc(b.shelf)}</td><td><div class="action-row"><button class="secondary small" data-edit-book="${esc(b.id)}">Edit</button>${isAdmin()?`<button class="danger small" data-delete-book="${esc(b.id)}">Delete</button>`:''}</div></td></tr>`)}
+function booksPage(searchMode=false){
+ const title=searchMode?'Book Search':'Book Management';
+ return `${header(title,searchMode?'Search by title, author, ID, department or semester.':'Add and maintain catalogue records, quantities and shelf locations.',!searchMode?'<button id="addBookBtn">＋ Add New Book</button>':'')}
+ <div id="bookFormHost"></div><section class="panel"><div class="toolbar"><input id="bookQuery" placeholder="Search name, author, book ID..." /><select id="bookDept">${deptOpts('')}</select><select id="bookSemester">${opts(['1','2','3','4','5','6'].map(x=>({name:'Semester '+x,value:x})),'',x=>x.name,x=>x.value,'All semesters')}</select><button class="secondary" id="clearBookFilters">Clear</button></div>
+ <div id="bookTable">${table(['Book ID','Accession No.','Book details','Author','Department','Semester','Total','Available','Shelf','Actions'],bookRows(db.books))}</div></section>`;
+}
+function bookForm(b=null){let edit=!!b;$('#bookFormHost').innerHTML=`<section class="panel" style="margin-top:16px"><h3>${edit?'Update Book':'Add New Book'}</h3><form id="bookForm"><div class="field-grid">
+ <div class="field"><label>Book ID *</label><input name="id" required value="${esc(b?.id||'')}" ${edit?'readonly':''} placeholder="e.g. B011"></div>
+ <div class="field"><label>Accession Number *</label><input name="accNo" required value="${esc(b?.accNo||'')}" placeholder="e.g. ACC-B011"></div>
+ <div class="field"><label>Book Name *</label><input name="name" required value="${esc(b?.name||'')}"></div>
+ <div class="field"><label>Author Name *</label><input name="author" required value="${esc(b?.author||'')}"></div>
+ <div class="field"><label>Publisher/Place</label><input name="publisher" value="${esc(b?.publisher||'')}"></div>
+ <div class="field"><label>ISBN</label><input name="isbn" value="${esc(b?.isbn||'')}"></div>
+ <div class="field"><label>Department *</label><select name="department" required>${opts(db.departments,b?.department||'',x=>x.name,x=>x.name,'Select department')}</select></div>
+ <div class="field"><label>Semester</label><select name="semester">${opts(['1','2','3','4','5','6'].map(x=>({name:'Semester '+x,value:x})),b?.semester||'1',x=>x.name,x=>x.value,'Select semester')}</select></div>
+ <div class="field"><label>Total Quantity *</label><input name="total" type="number" min="0" required value="${b?.total??1}"></div>
+ <div class="field"><label>Available Quantity *</label><input name="available" type="number" min="0" required value="${b?.available??1}"></div>
+ <div class="field"><label>Shelf Number</label><input name="shelf" value="${esc(b?.shelf||'')}"></div>
+ <div class="field full"><label>Description</label><textarea name="description" rows="2">${esc(b?.description||'')}</textarea></div>
+ </div><div class="form-actions"><button type="submit">${edit?'Save Changes':'Add Book'}</button><button type="button" class="secondary" id="cancelBookForm">Cancel</button></div></form></section>`;
+ $('#cancelBookForm').onclick=()=>$('#bookFormHost').innerHTML='';
+ $('#bookForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target),o=Object.fromEntries(f.entries());o.total=+o.total;o.available=+o.available;if(o.available>o.total){alert('Available quantity cannot exceed total quantity.');return}if(!edit&&db.books.some(x=>x.id===o.id)){alert('Book ID already exists.');return}if(edit){let old=db.books.find(x=>x.id===b.id),borrowed=old.total-old.available;if(o.total<borrowed||o.available>o.total-borrowed){alert('Quantity conflicts with currently issued copies.');return}Object.assign(old,o)}else db.books.push(o);save(db);notice={text:edit?'Book updated successfully.':'Book added successfully.',type:'success'};render()};
+}
+function peoplePage(type){let student=type==='Student',arr=student?db.students:db.faculty;return `${header(`${type} Management`,`Manage ${type.toLowerCase()} profiles and view their circulation history.`, `<button id="addPersonBtn">＋ Add ${type}</button>`)}
+ <section class="panel"><div class="toolbar"><input id="personQuery" placeholder="Search ${student?'student':'faculty'} ID or name..."><select id="personDept">${deptOpts('')}</select></div><div id="peopleTable">${peopleTable(arr,student)}</div></section><div id="personFormHost"></div>`}
+function peopleTable(arr,student){return table([student?'Student ID':'Faculty ID','Name','Department',...(student?['Semester','ID Verification']:[]),...(student?[]:['Mobile']),'Email','Actions'],arr.map(p=>`<tr><td><b>${esc(p.id)}</b></td><td>${esc(p.name)}</td><td>${esc(p.department)}</td>${student?`<td>${esc(p.semester)}</td><td>${p.verified?badge('Verified'):badge('Pending')}</td>`:`<td>${esc(p.mobile)}</td>`}<td>${esc(p.email)}</td><td><div class="action-row"><button class="secondary small" data-edit-person="${esc(p.id)}">Edit</button><button class="secondary small" data-person-history="${esc(p.id)}">History</button>${isAdmin()?`<button class="danger small" data-delete-person="${esc(p.id)}">Delete</button>`:''}</div></td></tr>`))}
+function personForm(type,p=null){let student=type==='Student',edit=!!p;$('#personFormHost').innerHTML=`<section class="panel" style="margin-top:16px"><h3>${edit?'Update':'Register'} ${type}</h3><form id="personForm"><div class="field-grid">
+ <div class="field"><label>${type} ID *</label><input name="id" required value="${esc(p?.id||'')}" ${edit?'readonly':''}></div>
+ <div class="field"><label>${type} Name *</label><input name="name" required value="${esc(p?.name||'')}"></div>
+ <div class="field"><label>Department *</label><select name="department" required>${opts(db.departments,p?.department||'',x=>x.name,x=>x.name,'Select department')}</select></div>
+ ${student?`<div class="field"><label>Semester *</label><select name="semester" required>${opts(['1','2','3','4','5','6'].map(x=>({name:'Semester '+x,value:x})),p?.semester||'1',x=>x.name,x=>x.value,'Select semester')}</select></div>`:''}
+ ${student?'':`<div class="field"><label>Mobile Number</label><input name="mobile" value="${esc(p?.mobile||'')}"></div>`}<div class="field"><label>Email Address</label><input name="email" type="email" value="${esc(p?.email||'')}"></div>
+ ${student?`<div class="field"><label>ID Card Verified?</label><select name="verified"><option value="true" ${p?.verified!==false?'selected':''}>Verified</option><option value="false" ${p?.verified===false?'selected':''}>Not verified</option></select></div>`:''}
+ </div><div class="form-actions"><button type="submit">Save ${type}</button><button type="button" class="secondary" id="cancelPerson">Cancel</button></div></form></section>`;
+ $('#cancelPerson').onclick=()=>$('#personFormHost').innerHTML='';
+ $('#personForm').onsubmit=e=>{e.preventDefault();let o=Object.fromEntries(new FormData(e.target).entries());if(!edit&&arrExists(type,o.id)){alert(`${type} ID already exists.`);return}if(student)o.verified=o.verified==='true';let arr=student?db.students:db.faculty;if(edit)Object.assign(arr.find(x=>x.id===p.id),o);else arr.push(o);save(db);notice={text:`${type} saved successfully.`,type:'success'};render()};
+}
+function arrExists(type,idv){return (type==='Student'?db.students:db.faculty).some(x=>x.id===idv)}
+function departmentsPage(){return `${header('Department Management','Maintain departments and see their current catalogue stock.',isAdmin()?'<button id="addDeptBtn">＋ Add Department</button>':'')}
+ <section class="panel"><div class="toolbar"><input id="deptQuery" placeholder="Search department..."></div><div id="deptTable">${departmentTable(db.departments)}</div></section><div id="deptFormHost"></div>`}
+function departmentTable(arr){return table(['Department ID','Department Name','Code','Total Copies','Available Copies','Actions'],arr.map(d=>{let bs=db.books.filter(b=>b.department===d.name);return `<tr><td>${esc(d.id)}</td><td><b>${esc(d.name)}</b></td><td>${esc(d.code||'—')}</td><td>${bs.reduce((s,b)=>s+b.total,0)}</td><td>${bs.reduce((s,b)=>s+b.available,0)}</td><td><div class="action-row"><button class="secondary small" data-edit-dept="${esc(d.id)}">Edit</button>${isAdmin()?`<button class="danger small" data-delete-dept="${esc(d.id)}">Delete</button>`:''}</div></td></tr>`}))}
+function deptForm(d=null){let edit=!!d;$('#deptFormHost').innerHTML=`<section class="panel" style="margin-top:16px"><h3>${edit?'Update':'Add'} Department</h3><form id="deptForm"><div class="field-grid"><div class="field"><label>Department ID</label><input name="id" required value="${esc(d?.id||'')}" ${edit?'readonly':''}></div><div class="field"><label>Department Name</label><input name="name" required value="${esc(d?.name||'')}"></div><div class="field"><label>Department Code</label><input name="code" value="${esc(d?.code||'')}"></div></div><div class="form-actions"><button>Save Department</button><button type="button" class="secondary" id="cancelDept">Cancel</button></div></form></section>`;
+ $('#cancelDept').onclick=()=>$('#deptFormHost').innerHTML='';$('#deptForm').onsubmit=e=>{e.preventDefault();let o=Object.fromEntries(new FormData(e.target).entries());if(!edit&&db.departments.some(x=>x.id===o.id)){alert('Department ID already exists.');return}if(edit){let old=db.departments.find(x=>x.id===d.id);if(old.name!==o.name&&db.books.some(b=>b.department===old.name)){alert('Cannot rename a department while books are linked to it in this demo.');return}Object.assign(old,o)}else db.departments.push(o);save(db);render()} }
+function issuePage(){return `${header('Issue Book','Issue a book to a registered student or faculty member.')}
+ <section class="panel"><div class="toolbar"><button class="secondary" id="issueStudentTab">Issue to Student</button><button class="secondary" id="issueFacultyTab">Issue to Faculty</button></div><div id="issueFormHost"></div></section>`}
+function issueForm(type){let student=type==='Student';$('#issueFormHost').innerHTML=`<h3>Issue Book to ${type}</h3><form id="issueForm"><div class="field-grid">
+ <div class="field"><label>${type} ID *</label><input id="borrowerId" name="personId" list="personIds" required placeholder="Enter ${type.toLowerCase()} ID"><datalist id="personIds">${(student?db.students:db.faculty).map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('')}</datalist><div class="section-note" id="personHint">Enter an ID to fetch details.</div></div>
+ <div class="field"><label>Department *</label><select name="department" id="issueDept" required>${opts(db.departments,'',x=>x.name,x=>x.name,'Select department')}</select></div>
+ <div class="field full"><div class="person-preview hidden" id="personPreview"></div><button type="button" class="secondary small hidden" id="registerFromIssue">＋ Register new ${type.toLowerCase()}</button></div>
+ <div class="field"><label>Book *</label><select name="bookId" id="issueBook" required>${bookOpts('')}</select><div class="section-note" id="bookHint">Choose a book to see author and available stock.</div></div>
+ <div class="field"><label>Issue Date *</label><input name="issueDate" type="date" value="${today()}" required></div><div class="field"><label>Due Date *</label><input name="dueDate" type="date" value="${plusDays(today(),14)}" required></div>
+ <div class="field"><label>Librarian Name *</label><input name="issuedBy" required value="${esc(currentUser?.username==='librarian'?'Library Staff':'Admin')}"></div>
+ </div><div class="form-actions"><button type="submit">Issue Book & Generate Receipt</button></div></form><div id="issueReceipt"></div>`;
+ $('#issueDept').onchange=()=>filterIssueBooks();$('#issueBook').onchange=showBookHint;$('#borrowerId').oninput=showPersonHint;
+ $('#registerFromIssue').onclick=()=>{let host=$('#issueFormHost');host.innerHTML=`<p class="muted">Register the person, then return to Issue Book.</p>`;page=student?'students':'faculty';render();setTimeout(()=>personForm(type),0)};
+ $('#issueStudentTab').onclick=()=>issueForm('Student');$('#issueFacultyTab').onclick=()=>issueForm('Faculty');
+ $('#issueForm').onsubmit=e=>{e.preventDefault();let f=Object.fromEntries(new FormData(e.target).entries()),p=(student?db.students:db.faculty).find(x=>x.id===f.personId),b=db.books.find(x=>x.id===f.bookId);if(!p){alert(`Please register this ${type.toLowerCase()} first.`);return}if(student&&!p.verified){alert('Student ID card is not verified. Verify it before issuing.');return}if(!b||b.available<1){alert('No available stock for this book.');return}if(f.department!==p.department||f.department!==b.department){alert('The selected department must match the person and the book department.');return}if(f.dueDate<f.issueDate){alert('Due date cannot be before issue date.');return}let x={id:id('TXN',db.issues),personType:type,personId:p.id,personName:p.name,department:p.department,bookId:b.id,bookName:b.name,author:b.author,issueDate:f.issueDate,dueDate:f.dueDate,returnDate:'',issuedBy:f.issuedBy,status:'Issued',fine:0,reissues:[]};b.available--;db.issues.push(x);save(db);$('#issueReceipt').innerHTML=`<div class="success">Book issued successfully. Transaction ID: <b>${esc(x.id)}</b></div><section class="panel" id="receipt"><h3>Manas College Pithoragarh — Issue Receipt</h3><p><b>Receipt / Transaction:</b> ${esc(x.id)}</p><p><b>Borrower:</b> ${esc(x.personName)} (${esc(x.personId)}) · ${esc(type)}</p><p><b>Book:</b> ${esc(x.bookName)} · ${esc(x.bookId)} by ${esc(x.author)}</p><p><b>Issue Date:</b> ${esc(x.issueDate)} &nbsp; <b>Due Date:</b> ${esc(x.dueDate)}</p><p><b>Issued by:</b> ${esc(x.issuedBy)}</p><button class="secondary no-print" onclick="window.print()">Print Receipt</button></section>`;e.target.reset();$('#issueDept').value='';$('#issueBook').innerHTML=bookOpts('');$('#issueReceipt').scrollIntoView({behavior:'smooth'});};
+ function filterIssueBooks(){let dep=$('#issueDept').value;$('#issueBook').innerHTML=bookOpts('');[...$('#issueBook').options].forEach(o=>{if(o.value&&dep&&db.books.find(b=>b.id===o.value)?.department!==dep)o.remove()});showBookHint()}
+ function showBookHint(){let b=db.books.find(x=>x.id===$('#issueBook').value);$('#bookHint').textContent=b?`Author: ${b.author} · Available quantity: ${b.available} · Shelf: ${b.shelf}`:'Choose a book to see author and available stock.'}
+ function showPersonHint(){let p=(student?db.students:db.faculty).find(x=>x.id===$('#borrowerId').value),box=$('#personPreview'),reg=$('#registerFromIssue');if(p){box.classList.remove('hidden');box.innerHTML=`<b>${esc(p.name)}</b> · ${esc(p.department)}${student?` · Semester ${esc(p.semester)} · ID card: ${p.verified?'Verified':'Not verified'}`:''}<br>${esc(p.mobile||'')} · ${esc(p.email||'')}`;reg.classList.add('hidden');$('#issueDept').value=p.department;filterIssueBooks();$('#personHint').textContent='Person record found.'}else{box.classList.add('hidden');reg.classList.remove('hidden');$('#personHint').textContent='ID not found. Register this person first.'}}
+ filterIssueBooks();
+}
+function returnPage(){return `${header('Book Return','Return an active issue and calculate any late fee.')}<section class="panel"><div class="toolbar"><button class="secondary" id="returnStudentTab">Return Student Book</button><button class="secondary" id="returnFacultyTab">Return Faculty Book</button></div><div class="field-grid"><div class="field"><label>Person ID</label><input id="returnPersonId" placeholder="Enter student or faculty ID"></div><div class="field"><label>Person type</label><select id="returnType"><option>Student</option><option>Faculty</option></select></div></div><div style="margin-top:12px" id="returnResults"></div></section>`}
+function renderReturnRows(){let pid=$('#returnPersonId').value.trim(),type=$('#returnType').value;let arr=db.issues.filter(x=>x.personId===pid&&x.personType===type&&x.status!=='Returned');$('#returnResults').innerHTML=pid?table(['Transaction','Book','Author','Issue Date','Due Date','Status','Action'],arr.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.bookName)}</td><td>${esc(x.author)}</td><td>${esc(x.issueDate)}</td><td>${esc(x.dueDate)}</td><td>${badge(isOverdue(x)?'Overdue':'Issued')}</td><td><button class="small" data-return="${esc(x.id)}">Return book</button></td></tr>`),'No active issued books found for this person.'):'<div class="empty">Enter a person ID to find active issues.</div>'}
+function historyPage(){return `${header('Issue History','Search, filter, print and export all book circulation transactions.','<button id="exportHistory">Export CSV</button> <button class="secondary" id="printHistory">Print</button>')}
+ <section class="panel"><div class="toolbar"><input id="historyQuery" placeholder="Search transaction, person, book, author..."><select id="historyType"><option value="">All people</option><option>Student</option><option>Faculty</option></select><select id="historyDept">${deptOpts('')}</select><select id="historyStatus"><option value="">All statuses</option><option>Issued</option><option>Returned</option><option>Overdue</option></select><label class="muted">Issue from <input type="date" id="historyFrom"></label><label class="muted">to <input type="date" id="historyTo"></label></div><div id="historyTable"></div></section>`}
+function issueRows(arr){return table(['Transaction','Person','Department','Book','Issue date','Due date','Return date','Issued by','Fine','Status'],arr.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.personName)}<div class="muted">${esc(x.personType)} · ${esc(x.personId)}</div></td><td>${esc(x.department)}</td><td>${esc(x.bookName)}<div class="muted">${esc(x.bookId)} · ${esc(x.author)}</div></td><td>${esc(x.issueDate)}</td><td>${esc(x.dueDate)}</td><td>${esc(x.returnDate||'—')}</td><td>${esc(x.issuedBy)}</td><td>₹${x.fine||0}</td><td>${badge(x.status)}</td></tr>`))}
+function finesPage(){let total=db.fines.reduce((s,x)=>s+x.amount,0),paid=db.fines.reduce((s,x)=>s+x.paid,0);return `${header('Fine Management','Track late-return charges, payments and pending balances.',isAdmin()?'<button id="fineSettings">⚙ Fine settings</button>':'')}
+ <div class="cards" style="grid-template-columns:repeat(3,minmax(0,1fr))">${metric('Fine per day','₹'+db.finePerDay,'Admin-configured rate','₹')}${metric('Total fine','₹'+total,'All recorded fines','Σ')}${metric('Pending fine','₹'+(total-paid),'Outstanding amount','!')}</div>
+ <section class="panel"><div class="toolbar"><input id="fineQuery" placeholder="Search person or transaction..."><button class="secondary" id="exportFines">Export CSV</button></div><div id="fineTable">${fineTable(db.fines)}</div></section><div id="fineSettingsHost"></div>`}
+function fineTable(arr){return table(['Fine ID','Person','Transaction','Fine amount','Paid','Pending','Status','Payment date','Action'],arr.map(f=>`<tr><td>${esc(f.id)}</td><td>${esc(f.personName)}<div class="muted">${esc(f.personType)} · ${esc(f.personId)}</div></td><td>${esc(f.transactionId)}</td><td>₹${f.amount}</td><td>₹${f.paid}</td><td>₹${f.amount-f.paid}</td><td>${badge(f.status)}</td><td>${esc(f.paymentDate||'—')}</td><td>${f.amount>f.paid?`<button class="small" data-pay-fine="${esc(f.id)}">Record payment</button>`:'—'}</td></tr>`))}
+function reissuePage(){let active=db.issues.filter(x=>x.status!=='Returned');return `${header('Reissue Book','Extend due dates while preserving the previous due date in reissue history.')}<section class="panel"><div class="toolbar"><input id="reissueQuery" placeholder="Search person ID or name..."></div><div id="reissueTable">${table(['Transaction','Person','Book','Issue date','Current due date','Reissue history','Action'],active.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.personName)}<div class="muted">${esc(x.personId)}</div></td><td>${esc(x.bookName)}</td><td>${esc(x.issueDate)}</td><td>${esc(x.dueDate)}</td><td>${x.reissues?.length||0} extension(s)</td><td><button class="small" data-reissue="${esc(x.id)}">Reissue</button></td></tr>`))}</div></section>`}
+function reportsPage(){return `${header('Reports','Generate circulation and inventory summaries.','<button id="printReport" class="secondary">Print Report</button> <button id="exportReport">Download CSV</button>')}
+ <section class="panel"><div class="toolbar"><label class="muted">From <input type="date" id="reportFrom"></label><label class="muted">To <input type="date" id="reportTo"></label><button id="runReport">Apply dates</button></div><div id="reportBody"></div></section>`}
+function renderReport(){
+ let from=$('#reportFrom')?.value||'';
+ let to=$('#reportTo')?.value||'';
+ let arr=db.issues.filter(x=>(!from||x.issueDate>=from)&&(!to||x.issueDate<=to));
+ let total=db.books.reduce((sum,b)=>sum+b.total,0);
+ let avail=db.books.reduce((sum,b)=>sum+b.available,0);
+ let studentRows=db.students.map(p=>{
+   let xs=arr.filter(x=>x.personType==='Student'&&x.personId===p.id);
+   return `<tr><td>${esc(p.name)} (${esc(p.id)})</td><td>${esc(p.department)}</td><td>${xs.length}</td><td>${xs.filter(x=>x.status!=='Returned').length}</td></tr>`;
+ });
+ let facultyRows=db.faculty.map(p=>{
+   let xs=arr.filter(x=>x.personType==='Faculty'&&x.personId===p.id);
+   return `<tr><td>${esc(p.name)} (${esc(p.id)})</td><td>${esc(p.department)}</td><td>${xs.length}</td><td>${xs.filter(x=>x.status!=='Returned').length}</td></tr>`;
+ });
+ $('#reportBody').innerHTML=`<div class="cards">${metric('Total Books',total,'Physical copies','▤')}${metric('Available Books',avail,'Ready to issue','✓')}${metric('Issued',arr.filter(x=>x.status!=='Returned').length,'In selected issue period','↗')}${metric('Returned',arr.filter(x=>x.status==='Returned').length,'In selected issue period','↙')}${metric('Overdue',arr.filter(isOverdue).length,'Current overdue transactions','!')}</div><h3>Department-wise stock</h3>${departmentTable(db.departments)}<h3 style="margin-top:22px">Student-wise issues</h3>${table(['Student','Department','Issue count','Active issues'],studentRows)}<h3 style="margin-top:22px">Faculty-wise issues</h3>${table(['Faculty','Department','Issue count','Active issues'],facultyRows)}<p><b>Fine collected:</b> ₹${db.fines.reduce((sum,f)=>sum+f.paid,0)} &nbsp; <b>Pending fine:</b> ₹${db.fines.reduce((sum,f)=>sum+f.amount-f.paid,0)}</p>`;
+}
+function settingsPage(){return `${header('Settings & Data','Change your login password and manage complete library backups.')}
+ <div class="two-col"><section class="panel"><h3>Change Password</h3><form id="changePasswordForm"><div class="field-grid"><div class="field full"><label>Current Password</label><input name="currentPassword" type="password" required></div><div class="field"><label>New Password</label><input name="newPassword" type="password" minlength="6" required></div><div class="field"><label>Confirm New Password</label><input name="confirmPassword" type="password" minlength="6" required></div></div><div class="form-actions"><button type="submit">Update Password</button></div><p class="section-note">Password is stored in this browser's local data. This demo is not suitable for sensitive production accounts.</p></form></section>
+ <section class="panel"><h3>Import / Export Data</h3><p class="muted">Export all books, students, faculty, departments, issue history, fines and user settings to a JSON backup. Import a previously exported JSON file to restore data.</p><div class="toolbar"><button id="exportDataBtn">Export JSON Backup</button><label class="button secondary" for="importDataFile" style="display:inline-flex;align-items:center;padding:10px 14px;border-radius:9px;background:#edf5ef;color:#20251f;cursor:pointer;font-weight:650">Import JSON Backup</label><input id="importDataFile" type="file" accept=".json,application/json" hidden></div><p class="section-note">Import replaces the current browser data. Export a backup first.</p></section></div>`}
+function bindSettings(){
+ $('#changePasswordForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),cur=f.get('currentPassword'),nw=f.get('newPassword'),cf=f.get('confirmPassword'),u=db.users.find(x=>x.username===currentUser.username);if(!u||u.password!==cur){alert('Current password is incorrect.');return}if(nw!==cf){alert('New password and confirmation do not match.');return}u.password=nw;save(db);alert('Password changed successfully.');e.target.reset()};
+ $('#exportDataBtn').onclick=()=>{const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='manas-college-library-backup-'+today()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+ $('#importDataFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const imported=JSON.parse(await file.text());if(!imported||!Array.isArray(imported.books)||!Array.isArray(imported.students)||!Array.isArray(imported.issues)||!Array.isArray(imported.users)||!Array.isArray(imported.departments)||!Array.isArray(imported.faculty)||!Array.isArray(imported.fines))throw new Error('This file does not look like a valid library backup.');if(!confirm('Import will replace all current library data in this browser. Continue?'))return;db=imported;save(db);if(!db.users.some(u=>u.username===currentUser.username&&u.role===currentUser.role)){currentUser=null;sessionStorage.removeItem('manasLibrarySession')}alert('Library data imported successfully.');render()}catch(err){alert('Import failed: '+err.message)}finally{e.target.value=''}};
+}
+function render(){
+ // The session token is the source of truth; never render private pages without it.
+ if(currentUser){
+  let activeSession=null;
+  try{activeSession=JSON.parse(sessionStorage.getItem('manasLibrarySession')||'null')}catch(e){}
+  if(!activeSession||activeSession.username!==currentUser.username||activeSession.role!==currentUser.role||!db.users.some(u=>u.username===activeSession.username&&u.role===activeSession.role)){
+   currentUser=null;try{sessionStorage.removeItem('manasLibrarySession')}catch(e){}clearLoginFields();
+  }
+ }
+ $('#today').textContent=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+ $('#roleBadge').textContent=(currentUser?.role||'').toUpperCase();
+ $('#loginScreen').classList.toggle('hidden',!!currentUser);$('#app').classList.toggle('hidden',!currentUser);if(!currentUser)return;
+ document.querySelectorAll('#nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ const titles={dashboard:'Dashboard',books:'Book Management',search:'Book Search',students:'Student Management',faculty:'Faculty Management',departments:'Department Management',issue:'Book Issue',return:'Book Return',history:'Issue History',reissue:'Reissue Book',fines:'Fine Management',reports:'Reports',settings:'Settings & Data'};
+ $('#topTitle').textContent=titles[page]||'Smart Library';
+ let html='';
+ if(page==='dashboard')html=dashboard();
+ if(page==='books'||page==='search')html=booksPage(page==='search');
+ if(page==='students')html=peoplePage('Student');
+ if(page==='faculty')html=peoplePage('Faculty');
+ if(page==='departments')html=departmentsPage();
+ if(page==='issue')html=issuePage();
+ if(page==='return')html=returnPage();
+ if(page==='history')html=historyPage();
+ if(page==='reissue')html=reissuePage();
+ if(page==='fines')html=finesPage();
+ if(page==='reports')html=reportsPage();
+ if(page==='settings')html=settingsPage();
+ $('#view').innerHTML=html;
+ bindPage();
+}
+function bindPage(){
+ if(page==='settings')bindSettings();
+ if(page==='books'||page==='search'){
+ const refresh=()=>{let q=$('#bookQuery').value.toLowerCase(),d=$('#bookDept').value,s=$('#bookSemester').value;let arr=db.books.filter(b=>(!q||[b.id,b.accNo,b.name,b.author,b.isbn].join(' ').toLowerCase().includes(q))&&(!d||b.department===d)&&(!s||b.semester===s));$('#bookTable').innerHTML=table(['Book ID','Accession No.','Book details','Author','Department','Semester','Total','Available','Shelf','Actions'],bookRows(arr))};
+ $('#bookQuery').oninput=refresh;$('#bookDept').onchange=refresh;$('#bookSemester').onchange=refresh;$('#clearBookFilters').onclick=()=>{$('#bookQuery').value='';$('#bookDept').value='';$('#bookSemester').value='';refresh()};
+ $('#addBookBtn')?.addEventListener('click',()=>bookForm());$('#bookTable').addEventListener('click',e=>{let edit=e.target.closest('[data-edit-book]'),del=e.target.closest('[data-delete-book]');if(edit)bookForm(db.books.find(x=>x.id===edit.dataset.editBook));if(del){let b=db.books.find(x=>x.id===del.dataset.deleteBook);if(db.issues.some(x=>x.bookId===b.id&&x.status!=='Returned')){alert('Cannot delete a book with active issues.');return}if(confirm('Delete '+b.name+'?')){db.books=db.books.filter(x=>x.id!==b.id);save(db);render()}}});
+ }
+ if(page==='students'||page==='faculty'){let type=page==='students'?'Student':'Faculty',student=type==='Student',arr=student?db.students:db.faculty;$('#addPersonBtn').onclick=()=>personForm(type);const refresh=()=>{let q=$('#personQuery').value.toLowerCase(),d=$('#personDept').value;$('#peopleTable').innerHTML=peopleTable(arr.filter(p=>(!q||(p.id+' '+p.name).toLowerCase().includes(q))&&(!d||p.department===d)),student)};$('#personQuery').oninput=refresh;$('#personDept').onchange=refresh;$('#peopleTable').addEventListener('click',e=>{let edit=e.target.closest('[data-edit-person]'),del=e.target.closest('[data-delete-person]'),hist=e.target.closest('[data-person-history]');if(edit)personForm(type,arr.find(x=>x.id===edit.dataset.editPerson));if(del){let p=arr.find(x=>x.id===del.dataset.deletePerson);if(db.issues.some(x=>x.personId===p.id&&x.status!=='Returned')){alert('Cannot delete a person with active issues.');return}if(confirm('Delete '+p.name+'?')){if(student)db.students=arr.filter(x=>x.id!==p.id);else db.faculty=arr.filter(x=>x.id!==p.id);save(db);render()}}if(hist){let p=arr.find(x=>x.id===hist.dataset.personHistory);page='history';render();$('#historyQuery').value=p.id;refreshHistory()}})}
+ if(page==='departments'){if($('#addDeptBtn'))$('#addDeptBtn').onclick=()=>deptForm();$('#deptQuery').oninput=()=>$('#deptTable').innerHTML=departmentTable(db.departments.filter(d=>(d.name+' '+d.code+' '+d.id).toLowerCase().includes($('#deptQuery').value.toLowerCase())));$('#deptTable').addEventListener('click',e=>{let ed=e.target.closest('[data-edit-dept]'),del=e.target.closest('[data-delete-dept]');if(ed)deptForm(db.departments.find(d=>d.id===ed.dataset.editDept));if(del){let d=db.departments.find(d=>d.id===del.dataset.deleteDept);if(db.books.some(b=>b.department===d.name)){alert('Cannot delete a department that still has books.');return}if(confirm('Delete department '+d.name+'?')){db.departments=db.departments.filter(x=>x.id!==d.id);save(db);render()}}})}
+ if(page==='issue'){issueForm('Student')}
+ if(page==='return'){$('#returnPersonId').oninput=renderReturnRows;$('#returnType').onchange=renderReturnRows;$('#returnStudentTab').onclick=()=>{$('#returnType').value='Student';renderReturnRows()};$('#returnFacultyTab').onclick=()=>{$('#returnType').value='Faculty';renderReturnRows()};$('#returnResults').addEventListener('click',e=>{let btn=e.target.closest('[data-return]');if(!btn)return;let x=db.issues.find(x=>x.id===btn.dataset.return);if(!x||x.status==='Returned'){alert('This transaction has already been returned.');return}let date=today(),days=Math.max(0,Math.floor((new Date(date+'T12:00:00')-new Date(x.dueDate+'T12:00:00'))/86400000)),fine=days*db.finePerDay;if(!confirm(`Confirm return of "${x.bookName}"? Late days: ${days}. Fine: ₹${fine}.`))return;x.returnDate=date;x.status='Returned';x.fine=fine;let b=db.books.find(b=>b.id===x.bookId);if(b)b.available=Math.min(b.total,b.available+1);if(fine>0)db.fines.push({id:id('FIN',db.fines),transactionId:x.id,personType:x.personType,personId:x.personId,personName:x.personName,amount:fine,paid:0,status:'Pending',paymentDate:''});save(db);renderReturnRows();notice={text:`Book returned. Fine: ₹${fine}`,type:'success'}})}
+ if(page==='history'){['historyQuery','historyType','historyDept','historyStatus','historyFrom','historyTo'].forEach(k=>$('#'+k).addEventListener('input',refreshHistory));$('#exportHistory').onclick=()=>downloadCSV('issue-history.csv',filteredHistory().map(flatIssue));$('#printHistory').onclick=()=>window.print();refreshHistory()}
+ if(page==='reissue'){$('#reissueQuery').oninput=()=>refreshReissue();$('#reissueTable').addEventListener('click',e=>{let b=e.target.closest('[data-reissue]');if(!b)return;let x=db.issues.find(x=>x.id===b.dataset.reissue),due=prompt('Enter new due date (YYYY-MM-DD):',plusDays(x.dueDate,14));if(!due)return;if(!/^\d{4}-\d{2}-\d{2}$/.test(due)||due<=x.dueDate){alert('Enter a valid date after the current due date.');return}x.reissues=x.reissues||[];x.reissues.push({oldDueDate:x.dueDate,newDueDate:due,date:today(),by:currentUser.username});x.dueDate=due;syncStatuses();save(db);render()})}
+ if(page==='fines'){$('#fineQuery').oninput=()=>{$('#fineTable').innerHTML=fineTable(db.fines.filter(f=>(f.personName+' '+f.personId+' '+f.transactionId).toLowerCase().includes($('#fineQuery').value.toLowerCase())))};$('#exportFines').onclick=()=>downloadCSV('fine-report.csv',db.fines);if($('#fineSettings'))$('#fineSettings').onclick=()=>{$('#fineSettingsHost').innerHTML=`<section class="panel" style="margin-top:16px"><h3>Fine settings</h3><label>Fine amount per overdue day (₹)</label><input id="fineRate" type="number" min="0" value="${db.finePerDay}" style="max-width:220px;margin:8px 0"><button id="saveFineRate">Save rate</button></section>`;$('#saveFineRate').onclick=()=>{db.finePerDay=Math.max(0,+$('#fineRate').value||0);save(db);render()}};$('#fineTable').addEventListener('click',e=>{let b=e.target.closest('[data-pay-fine]');if(!b)return;let f=db.fines.find(x=>x.id===b.dataset.payFine),v=prompt(`Pending ₹${f.amount-f.paid}. Enter payment received (₹):`,f.amount-f.paid);if(v===null)return;let amount=+v;if(amount<=0||amount>f.amount-f.paid){alert('Enter an amount between ₹1 and the pending balance.');return}f.paid+=amount;f.status=f.paid>=f.amount?'Paid':'Partial';f.paymentDate=today();save(db);render()})}
+ if(page==='reports'){$('#runReport').onclick=renderReport;$('#printReport').onclick=()=>window.print();$('#exportReport').onclick=()=>downloadCSV('library-report.csv',db.issues.map(flatIssue));renderReport()}
+}
+function filteredHistory(){let q=$('#historyQuery').value.toLowerCase(),type=$('#historyType').value,d=$('#historyDept').value,s=$('#historyStatus').value,from=$('#historyFrom').value,to=$('#historyTo').value;return db.issues.filter(x=>(!q||(x.id+' '+x.personId+' '+x.personName+' '+x.bookId+' '+x.bookName+' '+x.author).toLowerCase().includes(q))&&(!type||x.personType===type)&&(!d||x.department===d)&&(!s||x.status===s)&&(!from||x.issueDate>=from)&&(!to||x.issueDate<=to))}
+function refreshHistory(){if($('#historyTable'))$('#historyTable').innerHTML=issueRows(filteredHistory())}
+function refreshReissue(){let q=$('#reissueQuery').value.toLowerCase(),arr=db.issues.filter(x=>x.status!=='Returned'&&(x.personId+' '+x.personName).toLowerCase().includes(q));$('#reissueTable').innerHTML=table(['Transaction','Person','Book','Issue date','Current due date','Reissue history','Action'],arr.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.personName)}<div class="muted">${esc(x.personId)}</div></td><td>${esc(x.bookName)}</td><td>${esc(x.issueDate)}</td><td>${esc(x.dueDate)}</td><td>${x.reissues?.length||0} extension(s)</td><td><button class="small" data-reissue="${esc(x.id)}">Reissue</button></td></tr>`))}
+function flatIssue(x){return {'Transaction ID':x.id,'Person Type':x.personType,'Person ID':x.personId,'Person Name':x.personName,'Department':x.department,'Book ID':x.bookId,'Book Name':x.bookName,'Author':x.author,'Issue Date':x.issueDate,'Due Date':x.dueDate,'Actual Return Date':x.returnDate,'Issued By':x.issuedBy,'Fine Amount':x.fine,'Status':x.status}}
+function downloadCSV(name,rows){if(!rows.length){alert('No data to export.');return}let keys=[...new Set(rows.flatMap(x=>Object.keys(x)))],csv=[keys,...rows.map(r=>keys.map(k=>r[k]??''))].map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');let blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
+// Keep credential fields out of automatic browser autofill where supported.
+const passwordField=$('#password');
+const passwordToggle=$('#togglePassword');
+const passwordEyeIcon=$('#passwordEyeIcon');
+passwordField.addEventListener('focus',()=>passwordField.removeAttribute('readonly'));
+function updatePasswordToggle(){
+ const showing=passwordField.type==='text';
+ passwordToggle.setAttribute('aria-label',showing?'Hide password':'Show password');
+ passwordToggle.setAttribute('title',showing?'Hide password':'Show password');
+ passwordToggle.setAttribute('aria-pressed',String(showing));
+ passwordEyeIcon.innerHTML=showing
+  ? '<path d="M3 3l18 18M10.6 10.6a2 2 0 0 0 2.8 2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.8 15.8 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.4 0 2.7-.3 3.8-.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>'
+  : '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>';
+}
+passwordToggle.onclick=()=>{passwordField.type=passwordField.type==='password'?'text':'password';updatePasswordToggle();passwordField.focus()};
+function clearLoginFields(){
+ $('#username').value='';passwordField.value='';passwordField.type='password';
+ passwordField.setAttribute('readonly','');updatePasswordToggle();
+}
+function endLibrarySession(){
+ // Remove the authentication token before changing the visible screen.
+ try{sessionStorage.removeItem('manasLibrarySession')}catch(e){}
+ currentUser=null;clearLoginFields();
+ $('#loginError').classList.add('hidden');
+ page='dashboard';notice='';
+ // Replace the current history entry so a cached authenticated screen cannot be restored.
+ try{history.replaceState({libraryLoggedOut:true},'',location.href)}catch(e){}
+ render();
+}
+$('#loginForm').onsubmit=e=>{
+ e.preventDefault();
+ const u=$('#username').value.trim(),p=passwordField.value;
+ const found=db.users.find(x=>x.username===u&&x.password===p);
+ if(!found){$('#loginError').textContent='Invalid username or password.';$('#loginError').classList.remove('hidden');passwordField.value='';passwordField.focus();return}
+ currentUser={username:found.username,role:found.role};
+ try{sessionStorage.setItem('manasLibrarySession',JSON.stringify(currentUser))}catch(e){currentUser=null;$('#loginError').textContent='Browser session storage is unavailable. Please enable it and try again.';$('#loginError').classList.remove('hidden');return}
+ $('#loginError').classList.add('hidden');notice='';
+ passwordField.value='';render();
+};
+$('#logoutBtn').onclick=endLibrarySession;
+$('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(!b)return;page=b.dataset.page;notice='';render()});
+function restoreValidSession(){
+ let s=null;
+ try{s=JSON.parse(sessionStorage.getItem('manasLibrarySession')||'null')}catch(e){}
+ if(s&&db.users.some(u=>u.username===s.username&&u.role===s.role))currentUser=s;
+ else{currentUser=null;try{sessionStorage.removeItem('manasLibrarySession')}catch(e){}clearLoginFields()}
+}
+restoreValidSession();
+// Revalidate authentication whenever a cached page is restored or browser history changes.
+function revalidateVisibleSession(){restoreValidSession();render()}
+window.addEventListener('pageshow',revalidateVisibleSession);
+window.addEventListener('popstate',revalidateVisibleSession);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')revalidateVisibleSession()});
+window.addEventListener('storage',e=>{if(e.key==='manasLibrarySession'&&e.newValue===null)endLibrarySession()});
+render();
+})();
+</script>
+</body>
+</html>
